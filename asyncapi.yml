@@ -7,9 +7,11 @@ info:
   title: Shrek App
   version: '1.0.0'
   description: |
-    Have some fun with AsyncAPI and WebSocket and define an interface for ... Shrek
+    Purpose of this app is to some fun with AsyncAPI and WebSocket and define an interface for ... Shrek.
+
     ![](https://media.giphy.com/media/10Ug6rDDuG3YoU/giphy-downsized.gif)
 
+    You can use this API to chat with Shrek bot or to get updates about artifical travels to different locations.
 #
 # Details on how to connect to the application
 #
