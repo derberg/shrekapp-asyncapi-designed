@@ -7,7 +7,7 @@ info:
   title: Shrek App
   version: '1.0.0'
   description: |
-    Purpose of this app is to some fun with AsyncAPI and WebSocket and define an interface for ... Shrek.
+    Purpose of this app is to have some fun with AsyncAPI and WebSocket and define an interface for ... Shrek.
 
     ![](https://media.giphy.com/media/10Ug6rDDuG3YoU/giphy-downsized.gif)
 
