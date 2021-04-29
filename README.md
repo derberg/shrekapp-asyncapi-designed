@@ -28,12 +28,12 @@ For more context on the application purpose and what parts of the project are ge
 
 Documentation from `docs` is generated with the following command using the AsyncAPI Generator:
 ```bash
-ag asyncapi.yml @asyncapi/html-template -o docs --force-write 
+ag asyncapi.yaml @asyncapi/html-template -o docs --force-write 
 ```
 
 Generated docs are hosted here: https://derberg.github.io/shrekapp-asyncapi-designed/
 
 The initial code of the project was generated with the following command using the AsyncAPI Generator:
 ```bash
-ag asyncapi.yml @asyncapi/nodejs-ws-template --force-write -p server=swamp
+ag asyncapi.yaml @asyncapi/nodejs-ws-template --force-write -p server=swamp
 ```
