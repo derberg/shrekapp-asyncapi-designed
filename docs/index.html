@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  
+
+  <title>Shrek App 
+    
+    
+    
+    <span>1.0.0</span>
+ documentation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link href="css/main.min.css" rel="stylesheet">
+  
+</head>
+<body>
+  <div class="relative md:flex lg:flex xl:flex">
+    
+
+
+<input id="burger-menu" type="checkbox" />
+<label for="burger-menu" class="shadow">
+  <div class="wrapper">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</label>
+
+<div class="sidebar-panel fixed top-0 left-0 bottom-0 w-64 bg-gray-200 font-sans pt-8 pr-4 pb-4 pl-4">
+  <div class="sidebar-panel__content">
+    
+      <h1 class="text-2xl font-thin">
+        Shrek App 
+    
+    
+    
+    <span>1.0.0</span>
+
+      </h1>
+    
+    <ul class="text-sm mt-10 mt-2">
+      <li class="mb-3">
+        <a class="js-menu-item text-gray-700 no-underline" href="#introduction">Introduction</a>
+      </li>
+      
+        <li class="mb-3">
+          <a class="js-menu-item text-gray-700 no-underline" href="#servers">Servers</a>
+        </li>
+      
+    </ul>
+
+    
+      <h2 class="text-xs uppercase text-gray-500 mt-10 mb-4 font-thin">Operations</h2>
+      <ul class="text-sm mt-2">
+        <!-- With tags in sidebar -->
+        
+          <!--Without tags in sidebar-->
+          
+            <li>
+              
+                <a class="js-menu-item flex break-words no-underline text-gray-700 mt-8 sm:mt-8 md:mt-3" href="#operation-publish-/chat">
+                  <span class="bg-blue-600 font-bold h-6 no-underline text-white uppercase p-1 mr-2 rounded" style="height: 21px;font-size: 11px;" title="Publish">
+                    Pub
+                  </span>
+                  
+                    <span style="padding-top: 2px;">
+                      Client can send chat messages.
+                    </span>
+                  
+                </a>
+              
+
+              
+                <a class="js-menu-item flex break-words no-underline text-gray-700 mt-8 sm:mt-8 md:mt-3" href="#operation-subscribe-/chat">
+                  <span class="bg-green-600 font-bold no-underline text-white uppercase p-1 mr-2 rounded" style="height: 21px;font-size: 11px;" title="Subscribe">
+                    Sub
+                  </span>
+                  
+                    <span style="padding-top: 2px;">
+                      Client can receive chat messages.
+                    </span>
+                  
+                </a>
+              
+              </a>
+            </li>
+          
+            <li>
+              
+
+              
+                <a class="js-menu-item flex break-words no-underline text-gray-700 mt-8 sm:mt-8 md:mt-3" href="#operation-subscribe-/travel/status">
+                  <span class="bg-green-600 font-bold no-underline text-white uppercase p-1 mr-2 rounded" style="height: 21px;font-size: 11px;" title="Subscribe">
+                    Sub
+                  </span>
+                  
+                    <span style="padding-top: 2px;">
+                      Client can receive travel info status.
+                    </span>
+                  
+                </a>
+              
+              </a>
+            </li>
+          
+        
+      </ul>
+
+      <h2 class="text-xs uppercase text-gray-500 mt-10 mb-4 font-thin">Messages</h2>
+      <ul class="text-sm mt-2">
+        
+          <a class="js-menu-item flex break-words no-underline text-gray-700 mt-8 sm:mt-8 md:mt-3" href="#message-chatMessage">
+            <div style="display:inline-block;">
+              
+<span class="string-chunk" style="padding-top: 2px;">chatMessage</span>
+
+            </div>
+          </a>
+        
+          <a class="js-menu-item flex break-words no-underline text-gray-700 mt-8 sm:mt-8 md:mt-3" href="#message-travelInfo">
+            <div style="display:inline-block;">
+              
+<span class="string-chunk" style="padding-top: 2px;">travelInfo</span>
+
+            </div>
+          </a>
+        
+      </ul>
+    
+  </div>
+</div>
+
+    <div class="content-panel flex-1 leading-loose z-10">
+      
+
+<div class="center-block p-8">
+  <a name="introduction"></a>
+
+  <h1>Shrek App 
+    
+    
+    
+    <span>1.0.0</span>
+</h1>
+  <div class="leading-normal mb-4">
+    
+    
+  </div>
+
+  <div class="markdown">
+    <p>Purpose of this app is to some fun with AsyncAPI and WebSocket and define an interface for ... Shrek.</p>
+<p><img src="https://media.giphy.com/media/10Ug6rDDuG3YoU/giphy-downsized.gif" alt=""></p>
+<p>You can use this API to chat with Shrek bot or to get updates about artifical travels to different locations.</p>
+
+  </div>
+
+
+  <div class="leading-normal mb-4">
+    
+  </div>
+</div>
+
+
+
+
+
+
+<a name="servers"></a>
+<div class="center-block p-8">
+
+  <h2 class="mb-4">Servers</h2>
+
+  
+    <div class="shadow bg-gray-200 mb-3 px-4 py-3">
+      <div class="flex">
+        <div>
+          <div class="pr-4 font-mono">
+            
+<span class="string-chunk" >localhost</span>
+
+
+            
+    
+    <span class="bg-teal-500 font-sans font-bold no-underline text-white uppercase rounded ml-2"
+          style="height: 20px;font-size: 11px;padding: 3px;">ws</span>
+    
+
+          </div>
+          <div class="text-xs text-gray-600">
+            
+          </div>
+
+          
+
+    
+
+
+
+        </div>
+      </div>
+
+      
+        <div>
+          
+        </div>
+      
+
+      
+    </div>
+  
+
+</div>
+
+
+
+
+
+
+
+<a name="operations"></a>
+<h2 class="mb-4 ml-8">Operations</h2>
+
+
+  <div class="responsive-container">
+    
+      
+
+<a name="operation-publish-/chat"></a>
+<div class="center-block p-8">
+  <div class="operation pt-8 pb-8">
+    <h3 class="font-mono text-base">
+      
+      <span class="font-mono border border-blue-500 text-blue-500 uppercase p-1 rounded" title="Publish">Pub</span>
+      
+      
+      
+<span class="string-chunk" >/chat</span>
+
+    </h3>
+
+    <div class="mt-4 mb-4 markdown"></div>
+
+    <p class="text-gray-500 text-sm">Client can send chat messages.</p>
+    <div class="mt-4 mb-4 markdown"></div>
+
+    
+
+    
+
+
+
+
+    
+
+    
+
+    
+
+
+
+    
+    <p>Accepts the following message:</p>
+    
+
+<div class="bg-gray-200 rounded p-4 mt-2">
+  <div class="text-sm text-gray-700 mb-2">
+    
+    
+      <span class="border text-orange-600 rounded text-s py-0 px-2">chatMessage</span>
+    
+  </div>
+  <p class="text-gray-600 text-sm">Message that you send or receive from chat</p>
+  
+  
+
+<div class="mt-4">
+  
+</div>
+
+
+
+
+  
+  
+
+  <div class="mt-4 mb-4 markdown"></div>
+  
+    
+<div>
+  
+
+<div
+  class="bg-gray-200  rounded"
+>
+  <div class="is-open">
+    <div
+      class=" flex property"
+    >
+      <div class="pr-4" style="margin-top: -2px; min-width: 25%">
+        <span
+          class="text-sm"
+          style="word-break: break-word"
+          >Payload</span
+        >
+            
+      </div>
+
+      <div>
+        <div class="capitalize text-sm text-teal-500 font-bold">
+          
+string   
+          <div class="inline-block">
+                      
+          </div>
+        </div>
+
+        
+
+<div class="text-sm markdown"></div>
+
+    
+      </div>
+    </div>
+
+    
+  </div>
+</div>
+
+
+</div>
+
+  
+  
+
+  
+
+    
+
+
+  
+
+ 
+
+
+
+
+</div>
+
+
+    
+
+    
+
+<div class="mt-4">
+  
+</div>
+
+
+
+  </div>
+</div>
+
+<div class="right-block p-8">
+  <h4 class="text-lg text-white mb-4">Examples</h4>
+
+  
+  
+
+<form>
+  <h5 class="examples-uid text-orange-600 mt-4">chatMessage</h5>
+  
+    <div class="payload-examples mb-4 ">
+      <div class=" flex property">
+        <span class="px-2 mr-2 text-gray-200 text-sm border rounded focus:outline-none cursor-pointer">Payload</span>
+        
+      </div>
+      <div class="children payload-examples mt-4">
+        
+        <pre class="hljs mb-4 border border-gray-800 rounded"><code>"string"</code></pre>
+        <h6 class="text-xs font-bold text-gray-700 italic">This example has been generated automatically.</h6>
+        
+      </div>
+    </div>
+  
+
+  
+</form>
+
+
+  
+</div>
+
+
+
+    
+  </div>
+  <div class="responsive-container">
+    
+      
+
+<a name="operation-subscribe-/chat"></a>
+<div class="center-block p-8">
+  <div class="operation pt-8 pb-8">
+    <h3 class="font-mono text-base">
+      
+      
+      <span class="font-mono border border-green-600 text-green-600 uppercase p-1 rounded"
+        title="Subscribe">Sub</span>
+      
+      
+<span class="string-chunk" >/chat</span>
+
+    </h3>
+
+    <div class="mt-4 mb-4 markdown"></div>
+
+    <p class="text-gray-500 text-sm">Client can receive chat messages.</p>
+    <div class="mt-4 mb-4 markdown"></div>
+
+    
+
+    
+
+
+
+
+    
+
+    
+
+    
+
+
+
+    
+    <p>Accepts the following message:</p>
+    
+
+<div class="bg-gray-200 rounded p-4 mt-2">
+  <div class="text-sm text-gray-700 mb-2">
+    
+    
+      <span class="border text-orange-600 rounded text-s py-0 px-2">chatMessage</span>
+    
+  </div>
+  <p class="text-gray-600 text-sm">Message that you send or receive from chat</p>
+  
+  
+
+<div class="mt-4">
+  
+</div>
+
+
+
+
+  
+  
+
+  <div class="mt-4 mb-4 markdown"></div>
+  
+    
+<div>
+  
+
+<div
+  class="bg-gray-200  rounded"
+>
+  <div class="is-open">
+    <div
+      class=" flex property"
+    >
+      <div class="pr-4" style="margin-top: -2px; min-width: 25%">
+        <span
+          class="text-sm"
+          style="word-break: break-word"
+          >Payload</span
+        >
+            
+      </div>
+
+      <div>
+        <div class="capitalize text-sm text-teal-500 font-bold">
+          
+string   
+          <div class="inline-block">
+                      
+          </div>
+        </div>
+
+        
+
+<div class="text-sm markdown"></div>
+
+    
+      </div>
+    </div>
+
+    
+  </div>
+</div>
+
+
+</div>
+
+  
+  
+
+  
+
+    
+
+
+  
+
+ 
+
+
+
+
+</div>
+
+
+    
+
+    
+
+<div class="mt-4">
+  
+</div>
+
+
+
+  </div>
+</div>
+
+<div class="right-block p-8">
+  <h4 class="text-lg text-white mb-4">Examples</h4>
+
+  
+  
+
+<form>
+  <h5 class="examples-uid text-orange-600 mt-4">chatMessage</h5>
+  
+    <div class="payload-examples mb-4 ">
+      <div class=" flex property">
+        <span class="px-2 mr-2 text-gray-200 text-sm border rounded focus:outline-none cursor-pointer">Payload</span>
+        
+      </div>
+      <div class="children payload-examples mt-4">
+        
+        <pre class="hljs mb-4 border border-gray-800 rounded"><code>"string"</code></pre>
+        <h6 class="text-xs font-bold text-gray-700 italic">This example has been generated automatically.</h6>
+        
+      </div>
+    </div>
+  
+
+  
+</form>
+
+
+  
+</div>
+
+
+
+    
+  </div>
+
+  <div class="responsive-container">
+    
+  </div>
+  <div class="responsive-container">
+    
+      
+
+<a name="operation-subscribe-/travel/status"></a>
+<div class="center-block p-8">
+  <div class="operation pt-8 pb-8">
+    <h3 class="font-mono text-base">
+      
+      
+      <span class="font-mono border border-green-600 text-green-600 uppercase p-1 rounded"
+        title="Subscribe">Sub</span>
+      
+      
+<span class="string-chunk" >/travel/status</span>
+
+    </h3>
+
+    <div class="mt-4 mb-4 markdown"></div>
+
+    <p class="text-gray-500 text-sm">Client can receive travel info status.</p>
+    <div class="mt-4 mb-4 markdown"></div>
+
+    
+
+    
+
+
+
+
+    
+
+    
+
+    
+
+
+
+    
+    <p>Accepts the following message:</p>
+    
+
+<div class="bg-gray-200 rounded p-4 mt-2">
+  <div class="text-sm text-gray-700 mb-2">
+    
+    
+      <span class="border text-orange-600 rounded text-s py-0 px-2">travelInfo</span>
+    
+  </div>
+  <p class="text-gray-600 text-sm">Message that contains information about travel status.</p>
+  
+  
+
+<div class="mt-4">
+  
+</div>
+
+
+
+
+  
+  
+
+  <div class="mt-4 mb-4 markdown"></div>
+  
+    
+<div>
+  
+
+<div
+  class="bg-gray-200  rounded"
+>
+  <div class="is-open">
+    <div
+      class="js-prop cursor-pointer py-2 flex property"
+    >
+      <div class="pr-4" style="margin-top: -2px; min-width: 25%">
+        <span
+          class="text-sm"
+          style="word-break: break-word"
+          >Payload</span
+        >
+          
+        <svg
+          class="expand inline align-baseline"
+          version="1.1"
+          viewBox="0 0 24 24"
+          x="0"
+          xmlns="http://www.w3.org/2000/svg"
+          y="0"
+        >
+          <polygon
+            points="17.3 8.3 12 13.6 6.7 8.3 5.3 9.7 12 16.4 18.7 9.7 "
+          ></polygon>
+        </svg>
+          
+      </div>
+
+      <div>
+        <div class="capitalize text-sm text-teal-500 font-bold">
+          
+object   
+          <div class="inline-block">
+                      
+          </div>
+        </div>
+
+        
+
+<div class="text-sm markdown"></div>
+
+    
+      </div>
+    </div>
+
+    
+    <div
+      class="children bg-gray-100 py-4 rounded"
+    >
+           
+
+<div
+  class="bg-gray-100 pl-8 pr-8 rounded"
+>
+  <div class="">
+    <div
+      class=" flex property"
+    >
+      <div class="pr-4" style="margin-top: -2px; min-width: 25%">
+        <span
+          class="text-sm"
+          style="word-break: break-word"
+          >destination</span
+        >
+            
+      </div>
+
+      <div>
+        <div class="capitalize text-sm text-teal-500 font-bold">
+          
+string   
+          <div class="inline-block">
+                      
+          </div>
+        </div>
+
+        
+
+<div class="text-sm markdown"><p>Name of travel destination.</p>
+</div>
+
+    
+      </div>
+    </div>
+
+    
+  </div>
+</div>
+
+      
+
+<div
+  class="bg-gray-100 pl-8 pr-8 rounded"
+>
+  <div class="">
+    <div
+      class=" flex property"
+    >
+      <div class="pr-4" style="margin-top: -2px; min-width: 25%">
+        <span
+          class="text-sm"
+          style="word-break: break-word"
+          >distance</span
+        >
+            
+      </div>
+
+      <div>
+        <div class="capitalize text-sm text-teal-500 font-bold">
+          
+string   
+          <div class="inline-block">
+                      
+          </div>
+        </div>
+
+        
+
+<div class="text-sm markdown"><p>How much distance left to the target.</p>
+</div>
+
+    
+      </div>
+    </div>
+
+    
+  </div>
+</div>
+
+      
+
+<div
+  class="bg-gray-100 pl-8 pr-8 rounded"
+>
+  <div class="">
+    <div
+      class=" flex property"
+    >
+      <div class="pr-4" style="margin-top: -2px; min-width: 25%">
+        <span
+          class="text-sm"
+          style="word-break: break-word"
+          >arrival</span
+        >
+            
+      </div>
+
+      <div>
+        <div class="capitalize text-sm text-teal-500 font-bold">
+          
+string   
+          <div class="inline-block">
+                      
+          </div>
+        </div>
+
+        
+
+<div class="text-sm markdown"><p>Time left to get there.</p>
+</div>
+
+    
+      </div>
+    </div>
+
+    
+  </div>
+</div>
+
+    
+
+ 
+
+
+   
+      <p class="pl-6 mb-2 mt-4 text-xs text-gray-700">
+        Additional properties are allowed.
+      </p>
+        
+       
+    </div>
+    
+  </div>
+</div>
+
+
+</div>
+
+  
+  
+
+  
+
+    
+
+
+  
+
+ 
+
+
+
+
+</div>
+
+
+    
+
+    
+
+<div class="mt-4">
+  
+</div>
+
+
+
+  </div>
+</div>
+
+<div class="right-block p-8">
+  <h4 class="text-lg text-white mb-4">Examples</h4>
+
+  
+  
+
+<form>
+  <h5 class="examples-uid text-orange-600 mt-4">travelInfo</h5>
+  
+    <div class="payload-examples mb-4 ">
+      <div class="js-prop cursor-pointer  flex property">
+        <span class="px-2 mr-2 text-gray-200 text-sm border rounded focus:outline-none cursor-pointer">Payload</span>
+        
+          <svg class="expand inline align-baseline" version="1.1" viewBox="0 0 24 24" x="0"
+            xmlns="http://www.w3.org/2000/svg" y="0">
+            <polygon points="17.3 8.3 12 13.6 6.7 8.3 5.3 9.7 12 16.4 18.7 9.7 "></polygon>
+          </svg>
+        
+      </div>
+      <div class="children payload-examples mt-4">
+        
+          
+            <h6 class="text-xs font-bold text-gray-700">Example #1</h6>
+            <pre class="hljs mb-4 border border-gray-800 rounded"><code>{
+  "destination": "Far far away",
+  "distance": "Beyond the seven mountains and seven forests",
+  "arrival": "Pretty soon"
+}</code></pre>
+          
+        
+      </div>
+    </div>
+  
+
+  
+</form>
+
+
+  
+</div>
+
+
+
+    
+  </div>
+
+
+
+
+
+<a name="messages"></a>
+<h2 class="ml-8 mt-4">Messages</h2>
+
+<div class="responsive-container">
+  <div class="center-block p-8">
+    <div class="all-messages pb-8">
+      
+      <a name="message-chatMessage"></a>
+      
+
+<div class="bg-gray-200 rounded p-4 mt-2">
+  <div class="text-sm text-gray-700 mb-2">
+    
+    <span class="text-gray-700 font-bold mr-2">#1</span>
+    
+    
+      <span class="border text-orange-600 rounded text-s py-0 px-2">chatMessage</span>
+    
+  </div>
+  <p class="text-gray-600 text-sm">Message that you send or receive from chat</p>
+  
+  
+
+<div class="mt-4">
+  
+</div>
+
+
+
+
+  
+  
+
+  <div class="mt-4 mb-4 markdown"></div>
+  
+    
+<div>
+  
+
+<div
+  class="bg-gray-200  rounded"
+>
+  <div class="">
+    <div
+      class=" flex property"
+    >
+      <div class="pr-4" style="margin-top: -2px; min-width: 25%">
+        <span
+          class="text-sm"
+          style="word-break: break-word"
+          >Payload</span
+        >
+            
+      </div>
+
+      <div>
+        <div class="capitalize text-sm text-teal-500 font-bold">
+          
+string   
+          <div class="inline-block">
+                      
+          </div>
+        </div>
+
+        
+
+<div class="text-sm markdown"></div>
+
+    
+      </div>
+    </div>
+
+    
+  </div>
+</div>
+
+
+</div>
+
+  
+  
+
+  
+
+    
+
+
+  
+
+ 
+
+
+
+
+</div>
+
+
+      
+      <a name="message-travelInfo"></a>
+      
+
+<div class="bg-gray-200 rounded p-4 mt-2">
+  <div class="text-sm text-gray-700 mb-2">
+    
+    <span class="text-gray-700 font-bold mr-2">#2</span>
+    
+    
+      <span class="border text-orange-600 rounded text-s py-0 px-2">travelInfo</span>
+    
+  </div>
+  <p class="text-gray-600 text-sm">Message that contains information about travel status.</p>
+  
+  
+
+<div class="mt-4">
+  
+</div>
+
+
+
+
+  
+  
+
+  <div class="mt-4 mb-4 markdown"></div>
+  
+    
+<div>
+  
+
+<div
+  class="bg-gray-200  rounded"
+>
+  <div class="">
+    <div
+      class="js-prop cursor-pointer py-2 flex property"
+    >
+      <div class="pr-4" style="margin-top: -2px; min-width: 25%">
+        <span
+          class="text-sm"
+          style="word-break: break-word"
+          >Payload</span
+        >
+          
+        <svg
+          class="expand inline align-baseline"
+          version="1.1"
+          viewBox="0 0 24 24"
+          x="0"
+          xmlns="http://www.w3.org/2000/svg"
+          y="0"
+        >
+          <polygon
+            points="17.3 8.3 12 13.6 6.7 8.3 5.3 9.7 12 16.4 18.7 9.7 "
+          ></polygon>
+        </svg>
+          
+      </div>
+
+      <div>
+        <div class="capitalize text-sm text-teal-500 font-bold">
+          
+object   
+          <div class="inline-block">
+                      
+          </div>
+        </div>
+
+        
+
+<div class="text-sm markdown"></div>
+
+    
+      </div>
+    </div>
+
+    
+    <div
+      class="children bg-gray-100 py-4 rounded"
+    >
+           
+
+<div
+  class="bg-gray-100 pl-8 pr-8 rounded"
+>
+  <div class="">
+    <div
+      class=" flex property"
+    >
+      <div class="pr-4" style="margin-top: -2px; min-width: 25%">
+        <span
+          class="text-sm"
+          style="word-break: break-word"
+          >destination</span
+        >
+            
+      </div>
+
+      <div>
+        <div class="capitalize text-sm text-teal-500 font-bold">
+          
+string   
+          <div class="inline-block">
+                      
+          </div>
+        </div>
+
+        
+
+<div class="text-sm markdown"><p>Name of travel destination.</p>
+</div>
+
+    
+      </div>
+    </div>
+
+    
+  </div>
+</div>
+
+      
+
+<div
+  class="bg-gray-100 pl-8 pr-8 rounded"
+>
+  <div class="">
+    <div
+      class=" flex property"
+    >
+      <div class="pr-4" style="margin-top: -2px; min-width: 25%">
+        <span
+          class="text-sm"
+          style="word-break: break-word"
+          >distance</span
+        >
+            
+      </div>
+
+      <div>
+        <div class="capitalize text-sm text-teal-500 font-bold">
+          
+string   
+          <div class="inline-block">
+                      
+          </div>
+        </div>
+
+        
+
+<div class="text-sm markdown"><p>How much distance left to the target.</p>
+</div>
+
+    
+      </div>
+    </div>
+
+    
+  </div>
+</div>
+
+      
+
+<div
+  class="bg-gray-100 pl-8 pr-8 rounded"
+>
+  <div class="">
+    <div
+      class=" flex property"
+    >
+      <div class="pr-4" style="margin-top: -2px; min-width: 25%">
+        <span
+          class="text-sm"
+          style="word-break: break-word"
+          >arrival</span
+        >
+            
+      </div>
+
+      <div>
+        <div class="capitalize text-sm text-teal-500 font-bold">
+          
+string   
+          <div class="inline-block">
+                      
+          </div>
+        </div>
+
+        
+
+<div class="text-sm markdown"><p>Time left to get there.</p>
+</div>
+
+    
+      </div>
+    </div>
+
+    
+  </div>
+</div>
+
+    
+
+ 
+
+
+   
+      <p class="pl-6 mb-2 mt-4 text-xs text-gray-700">
+        Additional properties are allowed.
+      </p>
+        
+       
+    </div>
+    
+  </div>
+</div>
+
+
+</div>
+
+  
+  
+
+  
+
+    
+
+
+  
+
+ 
+
+
+
+
+</div>
+
+
+      
+    </div>
+  </div>
+</div>
+
+
+    </div>
+    <div class="examples-panel absolute top-0 right-0 bottom-0"></div>
+  </div>
+  
+  <script src="js/highlight.min.js" type="application/javascript"></script>
+  <script src="js/main.js" type="application/javascript"></script>
+  
+</body>
+</html>
