@@ -15,6 +15,11 @@ You can use this API to chat with Shrek bot or to get updates about artifical tr
 
 To interact with the server's API, open **index.html** file in the browser and use it's instructions or just install [websocat](https://github.com/vi/websocat#installation) client.
 
+In case you do not want to spend time setting up a chatbot, you can always play with the **travel/status** channel by calling:
+```bash
+websocat ws://localhost/travel/status
+```
+
 ## Learn more
 
 For more context on the application purpose and what parts of the project are generated and what custom, read [From API-First to Code Generation - A WebSocket Use Case](https://asyncapi.com/blog/websocket-part3).
