@@ -10,6 +10,7 @@
     "dummy-json": "^3.0.4",
     "express": "4.17.1",
     "express-ws": "4.0.0",
+    "g": "^2.0.1",
     "node-fetch": "^2.6.6",
     "node-yaml-config": "0.0.4",
     "websocat": "^1.1.0",
