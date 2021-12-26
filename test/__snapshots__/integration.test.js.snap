@@ -1,0 +1,198 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`template integration test using generator should generate application files  1`] = `
+"FROM node:12-alpine
+
+# Create app directory
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
+
+# Install app dependencies
+COPY package.json /usr/src/app/
+RUN npm install
+
+# Copy app source
+COPY . /usr/src/app
+
+CMD [ \\"npm\\", \\"start\\" ]
+"
+`;
+
+exports[`template integration test using generator should generate application files  2`] = `
+"This repository stores a WebSocket project designed with AsyncAPI. It exposes an interface to talk to a chatbot trained on Wit.ai.
+
+# Shrek App
+
+Purpose of this app is to have some fun with AsyncAPI and WebSocket and define an interface for ... Shrek.
+
+![](https://media.giphy.com/media/10Ug6rDDuG3YoU/giphy-downsized.gif)
+
+You can use this API to chat with Shrek bot or to get updates about artifical travels to different locations.
+
+## Run the app
+
+1. Install dependencies \`npm i\`
+1. Start server \`CHATBOT_TOKEN=your-token npm start\`. Replace **your-token** with token of your bot that you need to first create at Wit.ai
+
+To interact with the server's API, open **index.html** file in the browser and use it's instructions or just install [websocat](https://github.com/vi/websocat#installation) client.
+
+In case you do not want to spend time setting up a chatbot, you can always play with the **travel/status** channel by calling:
+\`\`\`bash
+websocat ws://localhost/travel/status
+\`\`\`
+
+## Learn more
+
+For more context on the application purpose and what parts of the project are generated and what custom, read [From API-First to Code Generation - A WebSocket Use Case](https://asyncapi.com/blog/websocket-part3).
+
+## Development
+
+Documentation from \`docs\` is generated with the following command using the AsyncAPI Generator:
+\`\`\`bash
+ag asyncapi.yaml @asyncapi/html-template -o docs --force-write 
+\`\`\`
+
+Generated docs are hosted here: https://derberg.github.io/shrekapp-asyncapi-designed/
+
+The initial code of the project was generated with the following command using the AsyncAPI Generator:
+\`\`\`bash
+ag asyncapi.yaml @asyncapi/nodejs-ws-template --force-write -p server=swamp
+\`\`\`"
+`;
+
+exports[`template integration test using generator should generate application files  3`] = `
+"  const app = require('express')();
+  require('express-ws')(app);
+  const config = require('../lib/config');
+  const routes = require('./routes');
+  const asyncapi = require('../lib/asyncapi');
+
+  const start = async () => {
+    //you have access to parsed AsyncAPI document in the runtime with asyncapi.get()
+    await asyncapi.init();
+
+    app.use(routes);
+
+    app.use((req, res, next) => {
+      res.status(404).send('Error: path not found');
+      next();
+    });
+
+    app.use((err, req, res, next) => {
+      console.error(err);
+      next();
+    });
+
+    app.listen(config.port);
+    console.info(\`Listening on port \${config.port}\`);
+  };
+
+  start();
+"
+`;
+
+exports[`template integration test using generator should generate application files  4`] = `
+"const util = require('util');
+const { Router } = require('express');
+const { pathParser } = require('../lib/path');
+const { yellow } = require('../lib/colors');
+const { subChatMessage, pubChatMessage } = require('./services/chat');
+const { subTravelInfo } = require('./services/travel-status');
+const router = Router();
+module.exports = router;
+router.ws('/chat', async (ws, req) => {
+  const path = pathParser(req.path);
+  console.log(\`\${yellow(path)} client connected.\`);
+  await subChatMessage(ws);
+  ws.on('message', async (msg) => {
+    console.log(\`\${yellow(path)} message was received:\`);
+    console.log(util.inspect(msg, { depth: null, colors: true }));
+    await pubChatMessage(ws, { message: msg, path, query: req.query });
+  });
+});
+router.ws('/travel/status', async (ws, req) => {
+  const path = pathParser(req.path);
+  console.log(\`\${yellow(path)} client connected.\`);
+  await subTravelInfo(ws);
+});
+"
+`;
+
+exports[`template integration test using generator should generate application files  5`] = `
+"const service = module.exports = {};
+const fetch = require('node-fetch');
+
+/**
+ * Client can receive chat messages.
+ * @param {object} ws WebSocket connection.
+ */
+service.subChatMessage = async (ws) => {
+  ws.send('Connection with Shrek established');
+};
+/**
+ * Client can send chat messages.
+ * @param {object} ws WebSocket connection.
+ * @param {object} options
+ * @param {string} options.path The path in which the message was received.
+ * @param {object} options.query The query parameters used when connecting to the server.
+ * @param {string} options.message The received message.
+ */
+service.pubChatMessage = async (ws, { message, path, query }) => {
+  const messageToShrek = message ? encodeURIComponent(message) : '';
+  const defaultAnswer = 'Shrek is out sorry. He\\\\'s busy rescuing the princess.';
+  let shrekAnswer = defaultAnswer;
+  let botAnswer;
+
+  try {
+      botAnswer = await fetch(\`https://api.wit.ai/message?q=\${messageToShrek}\`, {
+          headers: { 'Authorization': \`Bearer \${process.env.CHATBOT_TOKEN}\` }
+      });
+  } catch (e) {
+      throw new Error(\`Having issues communicating with the bot: \${e}\`);
+  }
+
+  if (botAnswer) {
+      const wrongQuestionAnswer = 'Is it you Donkey!? Ask a better question!';
+      const answerObject = await botAnswer.json();
+      let firstTraitValue;
+      
+      for (const [, v] of Object.entries(answerObject.traits)) {
+        firstTraitValue = v[0].value;
+        break;
+      }
+
+      shrekAnswer = firstTraitValue ? firstTraitValue : wrongQuestionAnswer;
+  }
+  console.log(\`Answered with: \${shrekAnswer}\`)
+  ws.send(shrekAnswer);
+};
+"
+`;
+
+exports[`template integration test using generator should generate application files  6`] = `
+"const service = module.exports = {};
+const dummyjson = require('dummy-json');
+
+/**
+ * Client can receive travel info status.
+ * @param {object} ws WebSocket connection.
+ */
+service.subTravelInfo = async (ws) => {
+  (function myLoop (i) {
+    setTimeout(() => {
+      ws.send(generateResponse());
+      if (--i) myLoop(i);
+    }, 1000);
+  }(100));  
+
+  function generateResponse() {
+    const template = \`{
+      \\"destination\\": \\"{{city}}\\",
+      \\"arrival\\": \\"{{int 2 6}}h\\",
+      \\"distance\\": \\"{{int 18 65}}km\\"
+    }\`;
+    return dummyjson.parse(template);
+  }
+};
+"
+`;
