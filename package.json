@@ -3,14 +3,23 @@
   "description": "Purpose of this app is to have some fun with AsyncAPI and WebSocket and define an interface for ... Shrek.  ![](https://media.giphy.com/media/10Ug6rDDuG3YoU/giphy-downsized.gif)  You can use this API to chat with Shrek bot or to get updates about artifical travels to different locations. ",
   "version": "1.0.0",
   "scripts": {
-    "start": "node src/api/index.js"
+    "start": "node src/api/index.js",
+    "test": "rimraf test/temp && jest"
   },
   "dependencies": {
     "@asyncapi/parser": "^1.5.0",
-    "dummy-json": "^3.0.2",
+    "dummy-json": "^3.0.4",
     "express": "4.17.1",
     "express-ws": "4.0.0",
-    "node-fetch": "^2.6.1",
-    "node-yaml-config": "0.0.4"
+    "g": "^2.0.1",
+    "node-yaml-config": "0.0.4",
+    "websocat": "^1.1.0",
+    "wscat": "^5.0.0"
+  },
+  "devDependencies": {
+    "@asyncapi/generator": "^1.8.27",
+    "jest": "^27.4.5",
+    "node-fetch": "^2.6.6",
+    "rimraf": "^3.0.2"
   }
 }
