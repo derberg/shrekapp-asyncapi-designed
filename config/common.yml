@@ -1,6 +1,6 @@
 default:
   port: 80
-  CHATBOT_TOKEN : HS2VJOMGZ6KNNIXE5AO24HHYECQW5KJZ
+
 
 development:
 
